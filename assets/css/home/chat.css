@@ -1,0 +1,147 @@
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos específicos para o chat */
+.chat-box {
+    width: 100%;
+    max-width: 600px; /* Limita o tamanho máximo do chat */
+    height: 500px; /* Altura ajustada para a rolagem */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow-y: auto; /* Garante que a rolagem apareça quando o conteúdo exceder a altura */
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Centraliza a caixa no meio da página */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos na vertical */
+    justify-content: flex-end; /* Posiciona os elementos no final */
+    background: #f8f9fa;
+}
+
+/* Estilos para cada mensagem */
+.message {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    max-width: 80%;
+    font-size: 15px;
+    line-height: 1.5;
+    transition: transform 0.3s ease;
+}
+
+/* Estilo para as mensagens do usuário */
+.message.user {
+    background-color: #e1f5fe;
+    align-self: flex-start;
+    border: 1px solid #b3e5fc;
+}
+
+/* Estilo para as mensagens do bot */
+.message.bot {
+    background-color: #f1f0f0;
+    align-self: flex-end;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para o texto das mensagens */
+.message .text {
+    color: #333;
+    word-wrap: break-word; /* Quebra a linha caso o texto seja muito longo */
+}
+
+/* Estilos para a barra de entrada */
+.input-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+margin: 0 auto;
+    width: 80%; /* Ajusta a largura do container para 80% em telas maiores */
+    max-width: 600px;
+    margin-top: 15px;
+    z-index: 100; /* Garante que o campo de entrada fique sobre a área do chat */
+}
+
+/* Estilo do campo de entrada */
+#user-input {
+    width: 80%; /* Ajusta a largura do campo de entrada */
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    height: 40px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+/* Estilo para o botão de envio */
+.tu {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+/* Efeito de hover no botão */
+.tu:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Foco no campo de entrada */
+#user-input:focus {
+    border-color: #007bff;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .chat-box {
+        width: 90%; /* Ajusta a largura da caixa de chat */
+        height: 350px; /* Reduz a altura da caixa de chat */
+        padding: 20px;
+    }
+
+    #user-input {
+        width: 70%; /* Ajusta a largura do campo de entrada */
+        font-size: 14px;
+        height: 35px; /* Ajusta a altura para telas menores */
+    }
+
+    .tu {
+        width: 70px; /* Ajusta a largura do botão */
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .chat-box {
+        width: 90%; /* Ajusta a largura da caixa de chat */
+        height: 250px; /* Reduz a altura da caixa de chat */
+        padding: 15px;
+    }
+
+    #user-input {
+        width: 75%; /* Ajusta a largura do campo de entrada */
+        font-size: 14px;
+        height: 35px; /* Garante que o campo de entrada tenha uma altura pequena */
+    }
+
+    .tu {
+        width: 60px; /* Ajusta o tamanho do botão */
+        font-size: 14px;
+    }
+
+    .message {
+        font-size: 13px; /* Reduz o tamanho das mensagens para telas menores */
+    }
+}
